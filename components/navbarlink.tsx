@@ -8,6 +8,7 @@ const Navbarlink: React.FC<{ link: Link }> = (props) => {
         href={props.link.href}
         className="px-12 py-3 text-slate-50 rounded-full bg-teal-400 hover:bg-teal-500 hover:text-slate-300"
         target='_blank'
+        rel="noreferrer"
       >
         {props.link.text}
       </a>

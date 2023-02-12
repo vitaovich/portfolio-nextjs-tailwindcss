@@ -1,6 +1,8 @@
+import Image from 'next/image'
+
 const Projects = () => {
   const title: string = "Projects";
-  const iconRoot = "assets/images/";
+  const iconRoot = "/assets/images/";
   const projects = [
     {
       title: "Portfolio",
@@ -92,12 +94,14 @@ const Projects = () => {
       <div className="container flex flex-col mx-auto lg:flex-row">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 pt-3">
           {projects.map((project) => (
-            <div className="relative group p-5 bg-teal-500 rounded-xl">
+            <div key={project.title} className="relative group p-5 bg-teal-500 rounded-xl">
               <h2 className="text-white">{project.title}</h2>
-              <img
+              <Image
                 src={iconRoot + project.icon.details}
                 alt={project.icon.details}
                 className="rounded-xl"
+                width={1280}
+                height={800}
               />
               <div className="absolute rounded-b-xl bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 bg-black opacity-0 group-hover:opacity-100 bg-opacity-40">
                 <div className="flex justify-between w-full">
