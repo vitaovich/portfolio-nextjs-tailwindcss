@@ -18,7 +18,7 @@ const About = () => {
             <Image
               src={selfImage}
               alt="Image of Vitaliy"
-              className="max-w-md rounded-l-md"
+              className="rounded-md lg:rounded-l-md"
               width={825}
               height={638}
             />
