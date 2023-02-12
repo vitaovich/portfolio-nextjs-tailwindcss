@@ -58,7 +58,7 @@ const Navbar = () => {
           <div
             className={`${
               isToggled ? "" : "hidden"
-            } flex flex-col items-center justify-center w-full space-y-6 py-4 font-bold bg-teal-700 text-white rounded-sm`}
+            } flex flex-col items-center justify-center w-full space-y-6 py-4 font-bold bg-teal-700 text-white rounded-sm lg:hidden`}
           >
             {links.map((link) => (
               <Navbarlink key={link.id} link={link}></Navbarlink>
