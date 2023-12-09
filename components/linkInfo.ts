@@ -1,4 +1,4 @@
-class Link {
+class LinkInfo {
   id: string;
   text: string;
   href: string;
@@ -12,4 +12,4 @@ class Link {
   }
 }
 
-export default Link;
+export default LinkInfo;

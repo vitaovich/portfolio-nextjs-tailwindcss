@@ -13,8 +13,7 @@ const About = () => {
     <section id="about" className="hero">
       <div className="hero-body">
         <p className="title box">About Me</p>
-        <div className="container">
-          <div className="columns box">
+          <div className="columns box mx-2">
             <div className="column is-one-third">
               <Image
                 src={selfImage}
@@ -32,7 +31,6 @@ const About = () => {
                 <p key={paragraph.key}>{paragraph.text}</p>
               ))}
             </div>
-          </div>
         </div>
 
       </div>

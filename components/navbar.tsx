@@ -1,19 +1,22 @@
 import { useState } from "react";
-import Link from "./link";
+import Image from 'next/image'
+import brandImg from '../public/assets/images/brand.webp'
+import Link from "next/link";
+import LinkInfo from "./linkInfo";
 
 const Navbar = () => {
   const brand = "Portfolio";
   const [isToggled, setToggle] = useState<boolean>(false);
-  const [links, setLinks] = useState<Link[]>([
-    new Link("About", "#about", false),
-    new Link("Projects", "#projects", false),
-    new Link(
+  const [links, setLinks] = useState<LinkInfo[]>([
+    new LinkInfo("About", "#about", false),
+    new LinkInfo("Projects", "#projects", false),
+    new LinkInfo(
       "Resume",
       "https://drive.google.com/file/d/1zLtBBGK9LRZ2dT2TA8rRznlr1-hhBAfl/view?usp=sharing",
       true
     ),
-    new Link("Github", "https://github.com/vitaovich/", true),
-    new Link(
+    new LinkInfo("Github", "https://github.com/vitaovich/", true),
+    new LinkInfo(
       "LinkedIn",
       "https://www.linkedin.com/in/vitaliy-alekhnovich/",
       true
@@ -35,6 +38,15 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="navbar-brand">
+          <Link href="/" className="navbar-item">
+          <Image
+                src={brandImg}
+                alt="Vitaliy Portfolio brand"
+                className="image rounded-full"
+                height={32}
+                width={32}
+              />
+          </Link>
           {/* <h1>{brand}</h1> */}
           <button className={`navbar-burger ${isToggled ? 'is-active' : ''}`} onClick={handleHamburgerClick}>
             <span className=""></span>
