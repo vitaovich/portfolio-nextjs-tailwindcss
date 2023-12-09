@@ -87,31 +87,34 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="bg-teal-400 rounded-md py-3 px-6 m-2 shadow-xl">
-      <h1>
-        {title}
-      </h1>
-      <div className="container flex flex-col mx-auto lg:flex-row">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 pt-3">
-          {projects.map((project) => (
-            <div key={project.title} className="relative group p-5 bg-teal-500 rounded-xl">
-              <h2 className="text-white">{project.title}</h2>
-              <Image
-                src={iconRoot + project.icon.details}
-                alt={project.icon.details}
-                className="rounded-xl"
-                width={1280}
-                height={800}
-              />
-              <div className="absolute rounded-b-xl bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 bg-black opacity-0 group-hover:opacity-100 bg-opacity-40">
-                <div className="flex justify-between w-full">
+    <section id="projects" className="hero">
+      <div className="hero-body">
+        <p className="title box">
+          {title}
+        </p>
+        <div className="container flex flex-col mx-auto lg:flex-row">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 pt-3">
+            {projects.map((project) => (
+              <div key={project.title} className="relative group p-5 box rounded-xl">
+                <h2 className="text-white">{project.title}</h2>
+                <Image
+                  src={iconRoot + project.icon.details}
+                  alt={project.icon.details}
+                  className="rounded-xl"
+                  width={1280}
+                  height={800}
+                />
+                <div className="absolute rounded-b-xl bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 bg-black opacity-0 group-hover:opacity-100 bg-opacity-40">
+                  <div className="flex justify-between w-full">
                     <p>{project.description}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
+
     </section>
   );
 };
