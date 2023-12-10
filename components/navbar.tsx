@@ -13,13 +13,14 @@ const Navbar = () => {
     new LinkInfo(
       "Resume",
       "https://drive.google.com/file/d/1zLtBBGK9LRZ2dT2TA8rRznlr1-hhBAfl/view?usp=sharing",
-      true
+      true, "is-primary"
     ),
-    new LinkInfo("Github", "https://github.com/vitaovich/", true),
+    new LinkInfo("Github", "https://github.com/vitaovich/", true, "is-dark"),
     new LinkInfo(
       "LinkedIn",
       "https://www.linkedin.com/in/vitaliy-alekhnovich/",
-      true
+      true, "is-info"
+      
     ),
   ]);
   const handleHamburgerClick = () => {
@@ -31,8 +32,6 @@ const Navbar = () => {
   const portfolioLinks = links.filter((link) => !link.background)
 
   const externalLinks = links.filter((link) => link.background)
-
-  // console.log(links, portfolioLinks, externalLinks);
 
   return (
     <>
@@ -76,7 +75,7 @@ const Navbar = () => {
                   <a
                     key={link.text}
                     href={link.href}
-                    className="button is-primary"
+                    className={`button ${link.classNames}`}
                   >
                     {link.text}
                   </a>
