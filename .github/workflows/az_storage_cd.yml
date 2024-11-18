@@ -39,18 +39,18 @@ jobs:
       with:
         name: output-static
 
-  #   - uses: azure/login@v1
-  #     with:
-  #       creds: ${{ secrets.AZ_STORAGE_DEPLOYER }}
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZ_STORAGE_DEPLOYER }}
 
-  #   - name: Upload to blob storage
-  #     uses: azure/CLI@v1
-  #     with:
-  #       inlineScript: |
-  #           az storage blob upload-batch --overwrite --account-name ${{ secrets.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login -d '$web' -s .
+    - name: Upload to blob storage
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+            az storage blob upload-batch --overwrite --account-name ${{ secrets.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login -d '$web' -s .
             
-  #   # Azure logout
-  #   - name: logout
-  #     run: |
-  #           az logout
-  #     if: always()
+    # Azure logout
+    - name: logout
+      run: |
+            az logout
+      if: always()
