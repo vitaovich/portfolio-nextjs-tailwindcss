@@ -25,6 +25,12 @@ jobs:
       run: npm run build
       working-directory: frontend
 
+    - name: Upload Static Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-static
+          path: output/
+
   # deploy:
   #   needs: build-test
   #   runs-on: ubuntu-latest
