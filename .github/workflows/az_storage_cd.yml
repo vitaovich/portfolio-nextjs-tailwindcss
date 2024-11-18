@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Set up Node.js
       uses: actions/setup-node@v2
@@ -31,13 +31,13 @@ jobs:
         name: output-static
         path: frontend/out
 
-  # deploy:
-  #   needs: build-test
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - uses: actions/download-artifact@v2
-  #     with:
-  #       name: build
+  deploy:
+    needs: build-test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/download-artifact@v4
+      with:
+        name: output-static
 
   #   - uses: azure/login@v1
   #     with:
