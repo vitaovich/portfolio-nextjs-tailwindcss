@@ -13,6 +13,7 @@ const Navbar = () => {
     new LinkInfo("About", "/#about", false),
     new LinkInfo("Projects", "/#projects", false),
     new LinkInfo("Excalidraw", "/excalidraw", false),
+    new LinkInfo("Examples", "/examples", false),
     new LinkInfo(
       "Resume",
       "https://drive.google.com/file/d/1zLtBBGK9LRZ2dT2TA8rRznlr1-hhBAfl/view?usp=sharing",
