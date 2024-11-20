@@ -1,4 +1,5 @@
 "use client"
+
 import { useState } from "react";
 import Image from 'next/image'
 import brandImg from '../../public/assets/images/brand.webp'
@@ -9,8 +10,9 @@ const Navbar = () => {
   const brand = "Portfolio";
   const [isToggled, setToggle] = useState<boolean>(false);
   const [links, setLinks] = useState<LinkInfo[]>([
-    new LinkInfo("About", "#about", false),
-    new LinkInfo("Projects", "#projects", false),
+    new LinkInfo("About", "/#about", false),
+    new LinkInfo("Projects", "/#projects", false),
+    new LinkInfo("excalidraw", "/excalidraw", false),
     new LinkInfo(
       "Resume",
       "https://drive.google.com/file/d/1zLtBBGK9LRZ2dT2TA8rRznlr1-hhBAfl/view?usp=sharing",
@@ -47,7 +49,6 @@ const Navbar = () => {
                 width={32}
               />
           </Link>
-          {/* <h1>{brand}</h1> */}
           <button className={`navbar-burger ${isToggled ? 'is-active' : ''}`} onClick={handleHamburgerClick}>
             <span className=""></span>
             <span className=""></span>
@@ -58,13 +59,13 @@ const Navbar = () => {
           <div className="navbar-start">
             {portfolioLinks.map((link) => (
               // <Navbarlink key={link.text} link={link}></Navbarlink>
-              <a
+              <Link
                 key={link.text}
                 href={link.href}
                 className="navbar-item"
               >
                 {link.text}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -72,14 +73,13 @@ const Navbar = () => {
             <div className="navbar-item">
               <div className="buttons">
                 {externalLinks.map((link) => (
-                  // <Navbarlink key={link.text} link={link}></Navbarlink>
-                  <a
+                  <Link
                     key={link.text}
                     href={link.href}
                     className={`button ${link.classNames}`}
                   >
                     {link.text}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
