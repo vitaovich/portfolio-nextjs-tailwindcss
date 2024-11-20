@@ -12,7 +12,7 @@ const Navbar = () => {
   const [links, setLinks] = useState<LinkInfo[]>([
     new LinkInfo("About", "/#about", false),
     new LinkInfo("Projects", "/#projects", false),
-    new LinkInfo("excalidraw", "/excalidraw", false),
+    new LinkInfo("Excalidraw", "/excalidraw", false),
     new LinkInfo(
       "Resume",
       "https://drive.google.com/file/d/1zLtBBGK9LRZ2dT2TA8rRznlr1-hhBAfl/view?usp=sharing",

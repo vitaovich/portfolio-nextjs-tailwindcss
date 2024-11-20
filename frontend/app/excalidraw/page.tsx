@@ -1,11 +1,6 @@
-
 const Page = () => {
     return (
-        <div>
-            <div>
-            Hello
-            </div>
-        </div>
+        <iframe src="https://excalidraw.com" width="100%" height="800px" />
     );
 }
 
